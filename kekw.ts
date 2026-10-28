@@ -1,26 +1,23 @@
 export{};
-let kanta1: number;
-let kanta2:number;
-let hypotenuusa:number;
-
-let tunnit:number;
-
-let halkaisija:number;
-
+let base1: number;
+let base2:number;
+let hypotenuse:number;
+let hours:number;
+let diameter:number;
 let count = 0;
 
-const submitButtonTriangle = document.getElementById("mySubmit");
+const submitButtonTriangle = document.getElementById("rightAngleTriangle");
 if (submitButtonTriangle){
    submitButtonTriangle.onclick = function(){
-    kanta1 = Number((document.getElementById("myText") as HTMLInputElement).value);
-    kanta2 = Number((document.getElementById("myText2") as HTMLInputElement).value);
-    hypotenuusa = Number((document.getElementById("myText3") as HTMLInputElement).value);
-    const answer = document.getElementById("answer");
+    base1 = Number((document.getElementById("base1") as HTMLInputElement).value);
+    base2 = Number((document.getElementById("base2") as HTMLInputElement).value);
+    hypotenuse = Number((document.getElementById("base3") as HTMLInputElement).value);
+    const answer = document.getElementById("rightAngleTriangleAnswer");
     if(answer){
-        if(kanta1 ** 2 + kanta2 ** 2 == hypotenuusa ** 2){
-            answer.textContent = "Suorakulmainen kolmio"
+        if(base1 ** 2 + base2 ** 2 == hypotenuse ** 2){
+            answer.textContent = "Right triangle"
         }else{
-            answer.textContent = "Ei suorakulmainen kolmio"
+            answer.textContent = "Not a right triangle"
         }
     }   
 }
@@ -29,10 +26,10 @@ if (submitButtonTriangle){
 const submitButtonHours = document.getElementById("mySubmitHours");
 if(submitButtonHours){
     submitButtonHours.onclick = function(){
-    tunnit = Number((document.getElementById("myHours") as HTMLInputElement).value);
+    hours = Number((document.getElementById("myHours") as HTMLInputElement).value);
     const answerHours = document.getElementById("answerHours");
     if(answerHours){
-        const beginningHours = ((10_000 / tunnit) / 365 + "years...").toString()
+        const beginningHours = ((10_000 / hours) / 365 + "years...").toString()
         const position = beginningHours.indexOf(".");
         const finalYears = beginningHours.slice(0, position + 3);
         answerHours.textContent = finalYears + "Years";
@@ -40,14 +37,14 @@ if(submitButtonHours){
     }
 }
 
-const ympyraPintaala = document.getElementById("halkaisijaInput");
-if(ympyraPintaala){
-        ympyraPintaala.onclick = function(){
-        halkaisija = Number((document.getElementById("halkaisijaSyote") as HTMLInputElement).value);
-        const halkaisijaVastaus = document.getElementById("halkaisijaVastaus");
-            if(halkaisijaVastaus){
-                const oikeaVastaus = (((halkaisija ** 2 ) * Math.PI) / 4).toString()
-                halkaisijaVastaus.textContent = oikeaVastaus
+const circleArea = document.getElementById("circleAreaCalculate");
+if(circleArea){
+        circleArea.onclick = function(){
+        diameter = Number((document.getElementById("diameterLength") as HTMLInputElement).value);
+        const circleAreaShow = document.getElementById("circleAreaShow");
+            if(circleAreaShow){
+                const circleAreaSize = (((diameter ** 2 ) * Math.PI) / 4).toString()
+                circleAreaShow.textContent = circleAreaSize
             }
         }
 }

@@ -1,22 +1,22 @@
-let kanta1;
-let kanta2;
-let hypotenuusa;
-let tunnit;
-let halkaisija;
+let base1;
+let base2;
+let hypotenuse;
+let hours;
+let diameter;
 let count = 0;
-const submitButtonTriangle = document.getElementById("mySubmit");
+const submitButtonTriangle = document.getElementById("rightAngleTriangle");
 if (submitButtonTriangle) {
     submitButtonTriangle.onclick = function () {
-        kanta1 = Number(document.getElementById("myText").value);
-        kanta2 = Number(document.getElementById("myText2").value);
-        hypotenuusa = Number(document.getElementById("myText3").value);
-        const answer = document.getElementById("answer");
+        base1 = Number(document.getElementById("base1").value);
+        base2 = Number(document.getElementById("base2").value);
+        hypotenuse = Number(document.getElementById("base3").value);
+        const answer = document.getElementById("rightAngleTriangleAnswer");
         if (answer) {
-            if (kanta1 ** 2 + kanta2 ** 2 == hypotenuusa ** 2) {
-                answer.textContent = "Suorakulmainen kolmio";
+            if (base1 ** 2 + base2 ** 2 == hypotenuse ** 2) {
+                answer.textContent = "Right triangle";
             }
             else {
-                answer.textContent = "Ei suorakulmainen kolmio";
+                answer.textContent = "Not a right triangle";
             }
         }
     };
@@ -24,24 +24,24 @@ if (submitButtonTriangle) {
 const submitButtonHours = document.getElementById("mySubmitHours");
 if (submitButtonHours) {
     submitButtonHours.onclick = function () {
-        tunnit = Number(document.getElementById("myHours").value);
+        hours = Number(document.getElementById("myHours").value);
         const answerHours = document.getElementById("answerHours");
         if (answerHours) {
-            const beginningHours = ((10000 / tunnit) / 365 + "years...").toString();
+            const beginningHours = ((10000 / hours) / 365 + "years...").toString();
             const position = beginningHours.indexOf(".");
             const finalYears = beginningHours.slice(0, position + 3);
             answerHours.textContent = finalYears + "Years";
         }
     };
 }
-const ympyraPintaala = document.getElementById("halkaisijaInput");
-if (ympyraPintaala) {
-    ympyraPintaala.onclick = function () {
-        halkaisija = Number(document.getElementById("halkaisijaSyote").value);
-        const halkaisijaVastaus = document.getElementById("halkaisijaVastaus");
-        if (halkaisijaVastaus) {
-            const oikeaVastaus = (((halkaisija ** 2) * Math.PI) / 4).toString();
-            halkaisijaVastaus.textContent = oikeaVastaus;
+const circleArea = document.getElementById("circleAreaCalculate");
+if (circleArea) {
+    circleArea.onclick = function () {
+        diameter = Number(document.getElementById("diameterLength").value);
+        const circleAreaShow = document.getElementById("circleAreaShow");
+        if (circleAreaShow) {
+            const circleAreaSize = (((diameter ** 2) * Math.PI) / 4).toString();
+            circleAreaShow.textContent = circleAreaSize;
         }
     };
 }
@@ -65,13 +65,14 @@ if (decreaseButton) {
         }
     };
 }
-const resetButton = document.getElementById("resetButton"); // luodaan aiheesta variaabeli, joka ottaa tiedon aiheen Id:llä
+const resetButton = document.getElementById("resetButton");
 if (resetButton) {
     resetButton.onclick = function () {
-        const countLabel = document.getElementById("countLabel"); // luodaan aiheesta variaabeli, joka ottaa tiedon aiheen Id:llä
+        const countLabel = document.getElementById("countLabel");
         if (countLabel) {
             count = 0;
             countLabel.textContent = count.toString();
         }
     };
 }
+
