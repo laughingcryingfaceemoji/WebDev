@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFunction(){
+            document.getElementById("demo7").innerHTML = "I came from head, from a function";
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="document.getElementById('demo1').innerHTML = Date()">Click me to display time</button>
+    <p id="demo1"></p>
+
+    <button type="button" onclick='document.getElementById("demo2").innerHTML = "You did it"'>Yes, here</button>
+    <p id="demo2">click the button above me to change me</p>
+
+    <button onclick="document.getElementById('myImage').src='happyviscous.png'">happy Viscous</button>
+    <img id="myImage" src="" style="width:100px">
+    <button onclick="document.getElementById('myImage').src='sadviscous.png'">sad Viscous</button>
+    <br>
+    <br>
+    <button type="button" onclick='document.getElementById("demo3").style.fontSize="35px"'>yes right here</button>
+    <p id="demo3">I want to grow bigger, click the button above me.</p>
+
+    <button type="button" onclick='document.getElementById("demo4").style.display = "none";'>time to go stealthy</button>
+    <p id="demo4">I wana go ninja mode</p>
+    <br>
+    <br>
+    <button type="button" onclick='document.getElementById("demo5").style.display = "block";'>click me for a surprise</button>
+    <p id="demo5" style="display:none">well that's that man well done!</p>
+
+    <p id="demo6"></p>
+
+    <button type="button" onclick="myFunction()">click me </button>
+    <p id="demo7">click the button above me to call a function!</p>
+
+    <button type="button" onclick="myFunction1()">click me</button>
+    <p id="demo8">you can also use  script tag inside of the body click the button above me!</p>
+
+    <button type="button" onclick="clickable()">click here</button>
+    <p id="demo9"></p>
+    
+    <script>
+        document.getElementById("demo6").innerHTML = "I came from an inline javascript tag!";
+
+        function myFunction1(){
+            document.getElementById("demo8").innerHTML = "I came from bottom of the body";
+        }
+    </script>
+
+    <!--<button type="button" onclick='document.write("kekew")'>Try me</button> document.write poistaa kaiken koodin-->
+    <script>
+        document.write("Asdsadsadsad");
+        document.write(3*3);
+    </script>
+    <script>
+        window.alert("Heya");
+    </script>
+    <script>
+        window.alert("Heyaaa");
+    </script>
+
+    <button onclick="window.print()">print this page</button> <!--Tää on tärkee!! tällä voi tulostaa sivun PDF:nä.-->
+    <button type="button" onclick="twoSentences()">click me to create two sentences from brains.js</button>
+    <p id="demo10"></p>
+    <p id="demo11"></p>
+
+    <lable>Enter anything</lable>
+    <input id="asda" type="text">
+    <button id="demo14" type="button" onclick="tellDataType()">Submit</button>
+    <p id="demo12"></p>
+    <script src="brains.js"></script> 
+</body>
+</html>
