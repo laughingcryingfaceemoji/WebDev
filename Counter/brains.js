@@ -1,5 +1,7 @@
 let x = 0
 doubletime = false
+autoclicker = false
+
 function increment(){
     if (doubletime){
         x += 2
@@ -17,6 +19,7 @@ function reset(){
     x = 0
     document.getElementById("cookie").innerHTML = x
 }
+
 function activateDoubletime(){
     if (x > 10){
         doubletime = true;
@@ -24,4 +27,19 @@ function activateDoubletime(){
         x.disabled = true //setting the button to disabled so user cant click it anymore
         reset()
     }
+}
+
+function activateAutoclicker(){
+    if(x > 25){
+        autoclicker = true
+        const b = document.getElementById("autoclicker")
+        b.disabled = true
+        reset()
+        setInterval(incrementAutoclicker, 1000)//allows to increase score by 1 each second. parameters are function and time in milliseconds
+    }
+}
+
+function incrementAutoclicker(){ 
+    x += 1
+    document.getElementById("cookie").innerHTML = x
 }
